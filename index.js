@@ -3,10 +3,11 @@ const app = express();
 const port = 3000;
 
 import productRoutes from './src/routes/productRoutes.js'
-
+app.use(express.json());
 app.use('/products', productRoutes);
 
 app.get('/', (req, res) => {
+    console.log(req.body)
     res.send('Hello World!');
 });
 

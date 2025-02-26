@@ -10,6 +10,7 @@ export const getallProducts = async (req, res) => {
 // add  products
 
 export const addProduct = async (req, res) => {
+    // console.log(req);
     const { name, price, description,image } = req.body;
     const product = await prisma.products.create({
         data: {
